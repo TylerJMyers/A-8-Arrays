@@ -1,0 +1,53 @@
+<html>
+<!-- 
+        Tyler Myers
+        A8 - Program 1 Series of Integers
+        A program that asks the user to enter an arbitrary number that is positive or negative, then displaying the numbers and totals of the positive and negative numbers.
+    -->
+
+<head>
+    <title>Program 1: Series of Integers</title>
+</head>
+
+<body>
+    <h1>Series of Integers</h1>
+    <script>
+        var arbnum = new Array(); //Creating an array for the arbitrary numbers.
+
+        var KeepGoing = true; //Using the keepgoing code as an example from class to keep asking the user for numbers until they decide to stop
+        while (KeepGoing) {
+            var number = parseFloat(prompt("Enter an arbitrary number, positive or negative:")); // Variable number asking the user to input a number
+            arbnum.push(number); //Making it so the array is 1 more number (don't quite know how to explain but I understand it)
+            KeepGoing = confirm("Want to input another number?"); //Confirming whether the user wants to input more numbers
+        }
+
+        var positiveStr = ""; //Declaring a variable for the positive string of nubmers
+        var negativeStr = ""; //Declaring a variable for the negative string of numbers
+        var positiveInt = 0; //Declaring a variable for the total of the positive numbers
+        var negativeInt = 0; //Declaring a variable for the total of negative numbers
+
+        for (var i = 0; i < arbnum.length; i++) { //A for loop that goes until it reaches the arbnum array length
+
+            if (arbnum[i] < 0) { //Checking whether or not the inputed number is negative
+                negativeStr += arbnum[i] + ", "; //Creating the string of numbers for the negative arbitrary numbers
+                negativeInt += arbnum[i]; //Adding the negative numbers to the negativeInt to create a total out of the negative numbers
+            }
+            if (arbnum[i] > 0) { //Checking whether or not the inputed number is positive
+                positiveStr += arbnum[i] + ", "; //Creating the string of numbers for the positive arbitrary given numbers
+                positiveInt += arbnum[i]; //Adding the positive numbers for the total
+            }
+        }
+
+        //Displays the following message with the negative numbers in a string, the .substring adds commas after each number
+        document.write("You entered the following negative numbers: " + negativeStr.substring(0, negativeStr.length - 2) + "<br>"); 
+
+        document.write("The sum of all negative integers are: " + negativeInt + "<br>"); //Displays the following message with the total of negativeInt at the end
+        
+        //Displays the following message with the positive numbers in a string, the .substring adds commas after each number
+        document.write("You entered the following positive numbers: " + positiveStr.substring(0, positiveStr.length - 2) + "<br>");
+
+        document.write("The sum of all positive integers are: " + positiveInt); //Displays the following message with the total of positiveInt at the end
+    </script>
+</body>
+
+</html>

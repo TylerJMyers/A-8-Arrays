@@ -1,0 +1,35 @@
+<html>
+<!-- 
+        Tyler Myers
+        A8 - Program 2 Array Analysis Function
+        A function that takes an array of numbers and a number as a parameter, then checking and counting if the given number is repeated in the array
+    -->
+
+<head>
+    <title>Program 2: Array Analysis Function</title>
+    <script>
+        function countOccurences(numArray, num) { //Declaring the function fo countOccurences
+            var countInt = 0; //Creating a variable that counts the integers
+            for (var i = 0; i < numArray.length; i++) { //A for loop that continually loops until it reaches the numArrays length
+                if (numArray[i] == num) { //checking if the number given by the user equals any number in the array
+                    countInt++; //if it does, it adds one to the counter
+                }
+            }
+            return countInt; //returns countInt, to be run through again.
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Array Analysis Function</h1>
+    <script>
+        var numArray = [1, 6, 8, 12, 4, 6, 8, 7, 2, 1, 1]; //Created the numArray with some random numbers I made up in the array
+        var num = parseInt(prompt("Enter an integer between 1 and 12: ")); //asking the user to input any number between 1 and 12
+
+        //Writing out the number of occurences with the given number, and numArray.join inputing all numbers within the array. 
+        //the function is called to see if the number the user inputed is repeated at all.
+        document.write("The number of occurrences of " + num + " in [" + numArray.join(", ") + "] is " + countOccurences(numArray, num));
+    </script>
+</body>
+
+</html>
